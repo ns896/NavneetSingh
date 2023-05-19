@@ -1,0 +1,2 @@
+# NavneetSingh
+My static webpage
