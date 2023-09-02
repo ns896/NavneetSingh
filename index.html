@@ -29,14 +29,18 @@
     <div class="navbar">
       <a class="nav-title-link" href="./index.html">
         <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
-        <span class="nav-title">Navneet Singh <br></span>
-
+        <span class="nav-title">Navneet Singh</span><br> <!-- Line break added here -->
+        <span class="nav-subtitle">Electrical Design Engineer</span><br>
+        <span class="nav-subtitle">Masters Biomedical Engineering</span><br> <!-- Line break added here -->
+        <span class="nav-subtitle">Cornell University</span>
+    
          <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
         <a class="button" href="mailto:ns896@cornell.edu">
           <span class="button-text">Contact Me</span>
         </a>
       </a>
     </div>
+
 
     <!-- MAIN PAGE CONTENT -->
     <div id="main-content">
@@ -51,7 +55,9 @@
             - Change the number to point to your Unemployable & replace the OpenSea link with your own
             - If you aren't using an Unemployable as your image, remove the entire "a" element
           -->
-          <img src="./assets/images/navneet_Main_image.JPG" class="portfolio-header-image">
+          <img src="./assets/images/navneet_Main_image.JPG" class="portfolio-header-image" style="width: 460px; height: 380px;">
+
+         <!-- <img src="./assets/images/navneet_Main_image.JPG" class="portfolio-header-image">
           <!--  a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
             <span class="image-caption">Unemployables #1311</span>  -->
           </a>
@@ -64,21 +70,21 @@
             - Change the body-text after that to a quick introduction to what you do
             - Edit the button text if you feel like it. It will link to the projects section below.
           -->
-        <div id="portfolio-header-text-container">
+          <div id="portfolio-header-text-container">
             <div class="header-text">
-              <span class="main-title">Navneet Singh </span>
+              <span class="main-title">Navneet Singh</span>
               <div class="body-text">
-                नमस्कारम् <br>I'm Navneet Singh, an Electrical Design Engineer, 
-                with a focus on biomedical devices.
-               Armed with a Master's in Biomedical Engineering from Cornell University and a Bachelor's in 
-               Instrumentation & Control Engineering,
-               I'm on a mission to make a significant impact in the medical field. <br>
-               FPGA's, CPLDs and SOCs are the main tools I utilize to implemnt my desings. Firmware and Hardware designs are 
-               my main area of focus.
-              
-              </div>
-            </div>
-            <a class="button" id="my-work-link">
+                नमस्कारम् <br>
+                I'm Navneet Singh, an Electrical Design Engineer with a passion for innovation.<br>
+                I work with FPGA's, CPLDs, and SOCs to engineer groundbreaking solutions
+                that push the boundaries of what's achievable. My expertise shines in Firmware and
+                Hardware design, where I excel at breathing life into embedded electronics boards.<br>
+                <br>
+                In my free time, you'll often find me immersed in the art of PCB layout, carefully
+                bringing designs to life without releasing the "magic smoke."
+                </div>
+          </div>
+             <a class="button" id="my-work-link">
               <span class="button-text">Check out my projects</span> 
               <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
             </a>
@@ -94,19 +100,31 @@
         - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
       -->
       <div id="about-section">
-        <span class="subheader-text">My Background / About Me</span>
+        <span class="subheader-text">My Journey & Expertise</span>
         <div class="about-section-content">
           <div class="body-text">
-            At Zendar INC., I've honed my skills in designing and bringing up mixed signal PCB boards for state-of-the-art automotive grade 76-81 GHz imaging radar heads. My expertise extends to integrating high-speed devices into SOC modules using PCIE, 1000BaseT1 Ethernet, and MIPI-CSI.<br>
-            During my tenure at Transonic Systems INC., I delved into the intricate world of medical devices, specializing in the design, debug, and failure analysis of mixed signal circuit boards. My work included FPGAs, CPLDs, PSOCs, and ARM MCUs, ensuring these devices met the highest standards for performance and regulatory compliance.<br>
-            In my research role at Adie Lab – Cornell University, I dived deep into RTL design and simulation, implementing cutting-edge algorithms for Optical Coherence Tomography and Scanning Probe Microscope based imaging systems. I also developed GUI-based automated diagnostics tools using LABVIEW & MATLAB, enhancing optical imaging capabilities.<br>
-            With a strong command of Intel FPGAs (Quartus Prime) and Xilinx FPGAs (Vivado & Vitis), along with expertise in Verilog, System Verilog, Python, and embedded C, I'm constantly seeking innovative solutions to enhance biomedical devices and improve healthcare outcomes.<br>
-            Let's connect on LinkedIn and explore the endless possibilities in the realm of biomedical engineering. Together, we can pave the way for transformative technologies that will impact lives around the world. Let's revolutionize the future of healthcare! 🏥🚀  
+            <p>Welcome to my world of innovation and engineering excellence!</p>
+            <p>At Zendar INC., I've honed my skills in the art of designing and bringing to life mixed signal
+               PCB boards, powering state-of-the-art automotive-grade 76-81 GHz imaging radar heads. My
+                playground is a fusion of high-speed devices, seamlessly integrated into SOC modules using PCIE, 
+                1000BaseT1 Ethernet, and MIPI-CSI.</p>
+            <p>During my tenure at Transonic Systems INC., I immersed myself in the fascinating realm of
+               medical devices. My specialty? The design, debug, and meticulous failure analysis of mixed 
+               signal circuit boards. My canvas included FPGAs, CPLDs, PSOCs, and ARM MCUs, all meticulously 
+               crafted to meet the highest standards of performance and regulatory compliance.</p>
+            <p>My research journey at Adie Lab – Cornell University, where innovation knows no bounds, led me
+               to the world of RTL design and simulation. Here, I wove cutting-edge algorithms into the fabric 
+               of Optical Coherence Tomography and Scanning Probe Microscope-based imaging systems. I even
+                conjured up GUI-based automated diagnostics tools using the magic of LABVIEW & MATLAB, elevating 
+                optical imaging capabilities to new heights.</p>
+            <p>With a firm grip on Intel FPGAs (Quartus Prime) and Xilinx FPGAs (Vivado & Vitis), complemented 
+              by expertise in Verilog, System Verilog, Python, and embedded C, I'm a relentless explorer in
+               search of inventive solutions to enhance biomedical devices and revolutionize healthcare outcomes.</p>
+            <p>
           </div>
-          <div class="body-text"></div>
         </div>
       </div>
-
+           
       <!-- PROJECTS / MY WORK SECTION -->
       <div id="my-work-section">
         <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
