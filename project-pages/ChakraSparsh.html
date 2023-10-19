@@ -80,8 +80,8 @@
           This page will document through the intricacies of configuring the Timer in Encoder Capture Mode. 
           
           <div class="image-container">
-            <img class="project-header-image" src="../assets/images/Encoder/ENCODER_SETUP.jpg" alt="Encoder Setup" ">
-            <p class="image-title">Image1-Encoder Setup with STM32H743ZI2 </p>
+          <img class="project-header-image" src="../assets/images/Encoder/ENCODER_SETUP.jpg" alt="Encoder Setup" ">
+          <p class="image-title">Image1-Encoder Setup with STM32H743ZI2 </p>
             
              
       <!-- PROJECT DETAILS -->
@@ -94,10 +94,45 @@
       <div id="project-details">
         <div class="subheader-text">Project Details / Background</div>
         <div class="project-details-content">
-          <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
-          <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+          <div class="body-text">The system's interconnection is illustrated in the block diagram below. A USB Type-C connector serves a dual role,
+             providing both communication and input power to the encoder PCB board. To facilitate communication with a PC, the STM32 USB middleware is utilized,
+             configuring the MCU as a USB CDC (Communication Device Class) device. This setup enables seamless data exchange between the MCU and the PC.<br>
+
+            Furthermore, the encoder is seamlessly interfaced with the MCU using the timer capture module for precise data input. 
+            To enhance user interaction and control, the built-in encoder switch is leveraged as a user interface element, offering intuitive and convenient operation. 
+            This interconnected system synergizes the power of STM32 microcontrollers with USB communication, precise encoder inputs, and a user-friendly interface to create a versatile and capable solution.<br>
+
+          </div>
+          <div class="body-text"></div>
         </div>
       </div>
+
+      <div class="image-container">
+        <img class="project-header-image" src="CHAKRA_IMGS/BLOCK_Diagram.png" alt="Encoder Setup" ">
+        <p class="image-title">Image2- SYSTEM BLOCK DIAGRAM </p>
+
+        <div id="project-details">
+          <div class="subheader-text">Encoder Circuit</div>
+          <div class="project-details-content">
+            <div class="body-text">This circuit diagram illustrates the seamless integration of the encoder with the MCU. Two signal lines, denoted as 'A' and 'B,' 
+              carry the encoder's signals, allowing the MCU to precisely capture the rotational data. Additionally, the built-in switch on the encoder is connected to the MCU,
+               providing the capability to detect and process various user interactions, such as single taps, double taps, and long holds on the switch.<br><br>
+
+              The incremental encoder operates by generating two output channels, 'A' and 'B,' which produce quadrature signals. As the encoder shaft rotates,
+               these signals are phased 90 degrees apart, and the MCU detects the edges of these signals. By tracking the order and timing of the signal edges,
+                the MCU can accurately determine the direction and speed of rotation.<br><br>
+              
+              For user interface functionality, the MCU's firmware is designed to recognize specific patterns of switch activations. Single taps, double taps,
+               and long holds are differentiated, allowing the MCU to respond to user input effectively. 
+              This combined setup offers precise rotational data capture and a user-friendly interface, making it a versatile and intelligent solution for a wide range of applications<br><br>
+  
+            </div>
+            <div class="body-text"></div>
+          <div class="image-container">
+          <img class="project-header-image" src="CHAKRA_IMGS/ENCODER_CKT.png" alt="Encoder Setup" ">
+          <p class="image-title">Image3-ENCODER CIRCUIT </p>
+          </div>
+        </div>
 
     </div>
     <pre class="Timer in Encoder Mode Setting">
