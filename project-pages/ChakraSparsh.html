@@ -1,0 +1,228 @@
+
+
+<!-- 
+  IMPORTANT! 
+  
+  Keep this file unchanged to use as a template for all future project pages. 
+
+  For every new project you add to your portfolio, make a copy of this file in the
+  'project-pages' folder with a name related to the project.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    <!-- 
+      TODO
+
+      Upload your Unemployable (or whatever photo you like) to the assets/images folder
+      and change the name of the image below to match the uploaded one
+
+      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
+
+      This should be the same across all pages.
+     -->
+     <link rel="icon" href="../assets/images/1311.png" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet">
+     <title>ChakraSparsh-Encoder</title>
+    <meta name="description" content="A portfolio template for the Unemployables community.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+
+		<script defer src="../js/script.js"></script>
+	</head>
+	<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <a class="nav-title-link" href="../index.html">
+      
+        <!-- 
+          TODO - Change the "Portfolio Title" to whatever you want displayed in the top left
+
+          (this should be the same across all pages)
+         -->
+        <span class="nav-title">NAVNEET SINGH</span><br>
+        <span class="nav-subtitle">Electrical Design Engineer</span><br>
+        <span class="nav-subtitle">Masters Biomedical Engineering</span><br> <!-- Line break added here -->
+        <span class="nav-subtitle">Cornell University</span>
+        <!-- 
+          TODO - Change the email after 'mailto:' to your email address for contact 
+        
+          (this should be the same across all pages)
+        -->
+        <a class="button" href="mailto:whitevans.eth@gmail.com">
+          <span class="button-text">Contact Me</span>
+        </a>
+      </a>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div id="main-content">
+
+      <!-- PROJECT HEADER -->
+      <div id="project-header">
+          <!-- 
+            TODO
+
+            - Change the 'main-title' text to the name of your project
+            - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
+            - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
+          -->
+        <div class="main-title">ChakraSparsh - Incremental Encoder Interface </div>
+        <div class="body-text">With the encoder generating two triggers per rotation, setting the prescaler to 1 ensures that every rotation directly increments the counter register.
+           Alternatively, you can harness the SMS register to increment on T1 edge, T2 edge, or both edges.
+          Our project objectives are clear: we aim to measure the speed of rotation and implement intelligent double and triple tap detection through the built-in switch.<br><br>
+          This page will document through the intricacies of configuring the Timer in Encoder Capture Mode. 
+          
+          <div class="image-container">
+            <img class="project-header-image" src="../assets/images/Encoder/ENCODER_SETUP.jpg" alt="Encoder Setup" ">
+            <p class="image-title">Image1-Encoder Setup with STM32H743ZI2 </p>
+            
+             
+      <!-- PROJECT DETAILS -->
+      <!-- 
+        TODO
+
+        - Change the 'subheader-text' to whatever header you want for project details
+        - Add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
+      -->
+      <div id="project-details">
+        <div class="subheader-text">Project Details / Background</div>
+        <div class="project-details-content">
+          <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
+          <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        </div>
+      </div>
+
+    </div>
+    <pre class="Timer in Encoder Mode Setting">
+      <div class="body-text"> Settin up the Timer 2 in Encoder mode, or more specifically input capture mode </div>
+      
+      <code>
+        // This can be Generated and edited in STM32 Cude IDE GUI
+      static void MX_TIM2_Init(void)
+      {
+        /* USER CODE BEGIN TIM2_Init 0 */
+        /* USER CODE END TIM2_Init 0 */
+        TIM_Encoder_InitTypeDef sConfig = {0};
+        TIM_MasterConfigTypeDef sMasterConfig = {0};
+      
+        /* USER CODE BEGIN TIM2_Init 1 */
+      
+        /* USER CODE END TIM2_Init 1 */
+        htim2.Instance = TIM2;
+        htim2.Init.Prescaler = 1;
+        htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+        htim2.Init.Period = 255;
+        htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+        htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+        sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
+        sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
+        sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+        sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
+        sConfig.IC1Filter = 15;
+        sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
+        sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
+        sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
+        sConfig.IC2Filter = 15;
+        if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK)
+        {
+          Error_Handler();
+        }
+        sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+        sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+        if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+        {
+          Error_Handler();
+        }
+      }
+      </code>
+      </pre> 
+
+      <!-- IMAGE GALLERY -->
+      <div id="project-gallery">
+        <!-- TODO - Change the 'subheader-text' to whatever you want the Gallery section header to say -->
+        <div class="subheader-text">Image Gallery</div>
+        <div class="project-gallery-content">
+            <!-- 
+              TODO
+
+              This is where the images in the gallery live. Here's a simple gallery image for you to copy:
+
+              Full Width Image:
+
+                <div class="gallery-image-container">
+                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
+                  <span class="image-caption">IMAGE_CAPTION</span>
+                </div>
+
+              Half Width Image: 
+
+                <div class="gallery-image-container half-width">
+                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
+                  <span class="image-caption">IMAGE_CAPTION</span>
+                </div>
+
+              - To add an image to the this area, copy one of the above, paste it below this comment, and change the following:
+                  - IMAGE_NAME: the name of the image file in assets/images
+                  - IMAGE_CAPTION: to the caption of the image
+            -->
+            <div class="gallery-image-container half-width">
+              <img src="../assets/images/Encoder/USB_TERMIANL.png" class="gallery-image">
+              <span class="image-caption">MCU Reporting Encoder Values on USB Terminal</span>
+            </div>
+            <div class="gallery-image-container half-width">
+              <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
+              <span class="image-caption">Give your image a caption. People love context.</span>
+            </div>
+            <div class="gallery-image-container">
+              <img src="../assets/images/camera.jpeg" class="gallery-image">
+              <span class="image-caption">Give your image a caption. People love context.</span>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      <!-- 
+        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
+
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://www.instagram.com/navneetsingh4446/">
+        <image src="../assets/icons/instagram.svg" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://github.com/ns896">
+        <image src="../assets/icons/github.png" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change the email after "mailto" to your contact email 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" href="mailto:ns896@cornell.edu">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+
+      <a class="icon-link" href="https://www.linkedin.com/in/navneetsingh1995/">
+        <image src="../assets/icons/linkedin.png" class="footer-icon"/>
+      </a>
+
+    </div>
+
+
+    
+
+	</body>
+</html>
