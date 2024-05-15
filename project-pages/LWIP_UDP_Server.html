@@ -93,14 +93,61 @@
         </div>
     </div>
 
-
-      <div id="project-details">
-        <div class="subheader-text">Project Details / Background</div>
-        <div class="project-details-content">
-          <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus. Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean vel elit.</div>
-          <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
-        </div>
+    <div id="project-details">
+      <div class="subheader-text">Project Details / Background</div>
+      <div class="project-details-content">
+          <div class="body-text">
+              The primary motivation for developing on LWIP was to enable Ethernet networking communication capabilities for field-deployed systems. 
+              The LWIP network stack comes pre-initialized with CubeIDE, simplifying the setup process. 
+              In this example, an RTOS is not used because the microcontroller (MCU) is small and does not necessitate the overhead of an operating system. 
+              Instead, the node integrates with a larger processing system, such as an x86 PC or a powerful SoC like the NVIDIA Jetson Xavier AGX, 
+              which can handle substantial calculations and processing tasks offloaded from the smaller nodes.
+          </div>
+          
+          <div class="body-text">
+              Main topics which are significantly important are covered in the following points:
+              <ul>
+                  <li>MCU Hardware Setup Between MCU & Ethernet PHY</li>
+                  <li>STM32 Memory Configuration for Ethernet stack</li>
+                  <li>Configuring MPU in ARM Cortex-M3</li>
+                  <li>Configuring the Ethernet GPIOs</li>
+                  <li>Configuring the clocks</li>
+                  <li>Configuring LWIP</li>
+                  <li>Linker list addition of stack for the Ethernet buffers for TX and RX</li>
+                  <li>Addition of execution code that creates a server on the STM32 microcontroller</li>
+                  <li>Compilation and debugging</li>
+              </ul>
+          </div>
       </div>
+  </div>
+
+  <div id="HARDWARE SETUP">
+    <div class="subheader-text"> MCU Hardware Setup Between MCU & Ethernet PHY</div>
+    <div class="project-details-content"><br>
+        <div class="body-text">
+          Configuring the hardware is based on the capabilities of the hardware. There are several 
+          configurations possible in the St's world. RMII or MII with some MCUs having memory management
+          and some don't. I used the STM32H743ZI2 board.
+          <br><br>
+          Below is a snippet from the STM32 ethernet PHY connection with the STM32 MCU.
+          <image class="project-header-image" src="LWIP/Ethernet_Schemtaic_PHY.png"></image>
+          <br>
+          Defining the pinouts in the STM32IDE.
+          <image class="project-header-image" src="LWIP/STM32_ETH_Connections.png"></image>
+          
+        </div>
+        
+        <div class="subheader-text"> Memory Configuration for ETH TX and RX buffers </div>
+    <div class="project-details-content"><br>
+        <div class="body-text">
+          <br><br>
+          Below is a snippet from the STM32 ethernet PHY connection with the STM32 MCU.
+          <image class="project-header-image" src="LWIP/ETH_BUFFER_MEMOEY_CONFIG.png"></image>
+          <br>
+          
+        </div>
+    </div>
+</div>
 
       <!-- IMAGE GALLERY -->
       <div id="project-gallery">
