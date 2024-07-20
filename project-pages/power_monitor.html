@@ -103,13 +103,13 @@
             power management.
         </p>
         <h4>Features</h4>
-        <p>
+        <p><ul>
           <li>Voltage rails measurement 0-26 Volts.<br></li>
           <li>Current Consumption on each rails. <br></li>
           <li>Programmable Alert and Warning Outputs, on MCU GPIO interrupts.<br></li>
           <li>Software controlled reset.<br></li>
           <li>Averaging mode on IC upto 1024 number of samples that are averaged.<br></li>
-          
+        </ul>
         </p>
       </div>
 
@@ -127,10 +127,57 @@
               The <b>Shunt_Voltage</b> is a difference voltage reading on the two ends of the SHUNT_Resistor. Voltage measurements 
               on pins  VIN+1__VIN-1, VIN+2__VIN-2, VIN+3__VIN-3. The voltage difference and the accurate value of resistance can 
               be used to calculate the current flowing through that rail.
-
+              <br><br>
+              The per channel voltages can be summed up or averaged by the INA3221 FSM itself. The configration register space 11-9 bit, can be used to define how many
+              samples are summed up to make a valid reading. Values include 1,4,16,64,128,1024. Default value is 1, I have not played with it much to see the effect.
+              But the mathematical implications are Lower Noise and Accuracy improvement.
+              <br><br>
+              The INA3221 communicates with the MCU on the I2C bus. The max operating frequency for the SCL line is 2.44MHz. This is 
+              only the case for the high speed mode which needs a repeated start condition for entering a high speed communication mode.
+              in Fast/Normal mode the maximum frequency of communication is not more then 0.4MHz(400Khz).
+     
           </p>
        
         </div>
+
+      <!-- 2.1 Section -->
+      <div id="section2.1" class="body-text" style="text-align: justify;">
+        <h3>2.1 INA3221 BUS Voltage Measurements</h3>
+        <p>
+            The BUS_VOLTAGE is stored in the register space at addresses 0x02, 0x04, and 0x06 for the respective channels. To convert the ADC digital reading to a floating-point value, follow these steps:
+        </p>
+        <ul>
+            <li>Right shift the ADC reading by 3 bits.</li>
+            <li>Multiply the result by 8mV to obtain the absolute voltage.</li>
+        </ul>
+        <p>
+            For the code implementation, refer to the following GitHub link:
+            <a href="https://github.com/ns896/KR_Drivers_STM32/blob/7d3f7e381b94efe1da4d6b722b83c2f2be942676/INA3221/KR_INA3221.c#L244" target="_blank">
+                INA3221 Code Line on GitHub
+            </a>
+        </p>
+      </div>
+
+      <!-- 2.2 Section -->
+      <div id="section2.2" class="body-text" style="text-align: justify;">
+        <h3>2.1 INA3221 Measurements SHUNT Voltage </h3>
+        <p>
+            The BUS_VOLTAGE is stored in the register space at addresses 0x01, 0x03, and 0x05 for the respective channels. To convert the ADC digital reading to a floating-point value, follow these steps:
+        </p>
+        <ul>
+            <li>Right shift the ADC reading by 3 bits.</li>
+            <li>Multiply the result by 40uV to obtain the absolute voltage.</li>
+            <li>Divide the value by the resistance of the SHUNT resistor on PCB (value in Amps) </li>
+            <li>Multiply the value by 1000 (value in mAmps) </li>
+
+          </ul>
+        <p>
+            For the code implementation, refer to the following GitHub link:
+            <a href="https://github.com/ns896/KR_Drivers_STM32/blob/7d3f7e381b94efe1da4d6b722b83c2f2be942676/INA3221/KR_INA3221.c#L244" target="_blank">
+                INA3221 Code Line on GitHub
+            </a>
+        </p>
+      </div>
   
 
 
@@ -140,38 +187,38 @@
 
       
 
-  <!-- FOOTER -->
-  <div id="footer">
-    <!-- 
-      TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
+    <!-- FOOTER -->
+    <div id="footer">
+      <!-- 
+        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
 
-      This should be the same across all pages.
-    -->
-    <a class="icon-link" target="_blank" href="https://www.instagram.com/navneetsingh4446/">
-      <image src="../assets/icons/instagram.svg" class="footer-icon"/>
-    </a>
-    <!-- 
-      TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-    
-      This should be the same across all pages.
-    -->
-    <a class="icon-link" target="_blank" href="https://github.com/ns896">
-      <image src="../assets/icons/github.png" class="footer-icon"/>
-    </a>
-    <!-- 
-      TODO - Change the email after "mailto" to your contact email 
-    
-      This should be the same across all pages.
-    -->
-    <a class="icon-link" href="mailto:ns896@cornell.edu">
-      <image src="../assets/icons/mail.svg" class="footer-icon"/>
-    </a>
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://www.instagram.com/navneetsingh4446/">
+        <image src="../assets/icons/instagram.svg" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://github.com/ns896">
+        <image src="../assets/icons/github.png" class="footer-icon"/>
+      </a>
+      <!-- 
+        TODO - Change the email after "mailto" to your contact email 
+      
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" href="mailto:ns896@cornell.edu">
+        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+      </a>
 
-    <a class="icon-link" href="https://www.linkedin.com/in/navneetsingh1995/">
-      <image src="../assets/icons/linkedin.png" class="footer-icon"/>
-    </a>
+      <a class="icon-link" href="https://www.linkedin.com/in/navneetsingh1995/">
+        <image src="../assets/icons/linkedin.png" class="footer-icon"/>
+      </a>
 
-  </div>
+    </div>
 
 	</body>
 </html>
