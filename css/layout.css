@@ -10,9 +10,12 @@ html {
 }
 
 body {
-  margin: 0;
+  
+  margin: 0px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+
 }
 
 
@@ -24,7 +27,7 @@ body {
   margin: 225px 425px;
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 10px;
 }
 
 
