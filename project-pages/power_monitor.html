@@ -181,6 +181,47 @@
         </p>
       </div>
 
+      <!-- 3.0 STM32H7 Data Flow -->
+      <div id="section3.0" class="body-text" style="text-align: justify;">
+        <h3>3.0 STM32H7 Data Flow</h3>
+        <p>
+          The Firmware on STM32H7 is responsible for sending the data from the MCU to the main PC, on the UART bus.
+          The BAUD RATE of the UART is 115200 Bits/second (needed to set up the host).
+        </p>
+        
+      </div>
+
+      <!-- 3.1 UART packet encoding -->
+      <div id="section3.1" class="body-text" style="text-align: justify;">
+        <h4> 3.1 UART PACKET ENCODING </h4>
+        <p>
+        The data coming out of the MCU will be in a form of data packets. 
+        Protocol that will be followed by the sender will be as follows.<br><br>
+
+        SOF -> Data_0.1 -> Data_0.2 -> Data_1.0 -> Data_1.2 ......... -> EOF
+        Each data packet is consisting of 16 bits of channel data. The protocol will have 6 channels, three for shut voltage
+        and three for bus voltage.
+          <br><br><br>        
+          SOF : Start of Frame == 0x02<br>
+          BYTE1 : DATA<br>
+          BYTE2 : DATA<br>
+          BYTE3 : DATA<br>
+          BYTE4 : DATA<br>
+          ...<br>
+          BYTE(n-2) : DATA<br>
+          BYTE(n-1) : DATA<br>
+          EOF (n) : END of Frame == 0x3<br><br><br>
+          
+          <h5> SOF EOF CONFLICT RESOLUTION </h5>
+          SOF/EOF Conflict Resolution When the data to be transmitted conflicts with the Start of Frame (SOF) 
+          or End of Frame (EOF) bytes, we will use a byte stuffing option. A special character will be transmitted 
+          before the conflicting byte, which will be an XOR of the conflict byte with the special character.<br>
+          * Special Character: 0x1B
+
+        </p>
+        
+      </div>
+
 
       <!-- 5.0 Hardware Section -->
       <div id="section5.0" class="body-text" style="text-align: justify;">
@@ -195,13 +236,18 @@
         
       </div>
 
+
+
+
       <!-- 5.1 Hardware Section -->
       <div id="section5.1" class="body-text" style="text-align: justify;">
         <h3>5.0 INA3221 Breakout Board </h3>
         <p>
-          The following schematic board is used foe the implementation of the current sensor.
+          The following schematic board is used foe the implementation of the current sensor.<br><br>
+          In the following board implementation the A0 pin of the INA3221 is tied to GND hence the device address 
+          is 0b1000000. This value is used to address the slave over the I2C bus. 
         </p>
-        <image class="project-header-image" src="Power_Monitor/Schematic_Snippet.png">
+        <image class="project-header-image" src="Power_Monitor/Schematic_Snippet.png" style="width: 50%;">
       </div>
   
 
