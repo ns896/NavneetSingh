@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="BgTQnnzX-4dHzKqA9kwq" name="Page-1">
-        <mxGraphModel dx="3155" dy="1013" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+        <mxGraphModel dx="2073" dy="1013" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -28,7 +28,7 @@
                 <mxCell id="75" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="64" target="65">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="Channel1_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="64" value="Channel1_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="310" y="440" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="65" target="66">
@@ -40,7 +40,7 @@
                 <mxCell id="77" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="66" target="67">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="66" value="Channel2_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="66" value="Channel2_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="310" y="600" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="67" target="68">
@@ -60,7 +60,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="68" value="Channel3_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="68" value="Channel3_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="310" y="760" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="69" target="70">
@@ -72,7 +72,7 @@
                 <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="70" target="81">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="70" value="Channel4_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="70" value="Channel4_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="872" y="440" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="81" target="82">
@@ -84,7 +84,7 @@
                 <mxCell id="87" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="82" target="83">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="82" value="Channel5_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="82" value="Channel5_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="872" y="600" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="83" target="84">
@@ -96,7 +96,7 @@
                 <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=5;fontSize=100;" edge="1" parent="1" source="84" target="89">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="84" value="Channel4_1_MSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
+                <mxCell id="84" value="Channel4_1_LSB(7-0)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#CCCC00;fontColor=#ffffff;strokeColor=#6F0000;strokeWidth=3;" vertex="1" parent="1">
                     <mxGeometry x="872" y="760" width="357.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="END OF FRAME" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;strokeWidth=3;" vertex="1" parent="1">
